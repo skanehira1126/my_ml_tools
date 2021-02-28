@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 from IPython.display import display
 
@@ -31,7 +32,7 @@ def show_importance(f_importance, feats, normalize=True):
 
     return df_importance
 
-def show_prediction_binary(pred, true):
+def show_prediction_binary(true, pred):
     """
     plot hitgram of prediction values and true values
 
@@ -50,10 +51,10 @@ def show_prediction_binary(pred, true):
 
         return sturges(len(df[col]))
 
-    plot_data = pd.DataFrame([pred, true], index=["pred", "true"]).T
+    plot_data = pd.DataFrame([true, pred], index=["true", "pred"]).T
 
     bins = calc_sturges(plot_data, "pred")
-    sns.distplot(plot_data[plot_data.true == 1], label="Pos", norm_hist=norm_hist)
-    sns.distplot(plot_data[plot_data.true == 0], label="Neg", norm_hist=norm_hist)
+    sns.distplot(plot_data[plot_data.true == 1], label="Pos")
+    sns.distplot(plot_data[plot_data.true == 0], label="Neg")
     plt.show()
     plt.close()
