@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from utils import calc_sturges
+
 from IPython.display import display
 
 def show_importance(f_importance, feats, normalize=True):
@@ -43,18 +45,11 @@ def show_prediction_binary(true, pred):
     true :
         true label
     """
-    def calc_sturges(df, col):
-        """
-        bins計算用関数
-        """
-        sturges = lambda n:  np.ceil(np.log2(n*2))
-
-        return sturges(len(df[col]))
 
     plot_data = pd.DataFrame([true, pred], index=["true", "pred"]).T
 
-    bins = calc_sturges(plot_data, "pred")
-    sns.distplot(plot_data[plot_data.true == 1], label="Pos")
-    sns.distplot(plot_data[plot_data.true == 0], label="Neg")
+    bins = calc_sturges(plot_data)
+    sns.distplot(plot_data[plot_data.true == 1], label="Pos", bins=bins)
+    sns.distplot(plot_data[plot_data.true == 0], label="Neg", bins=bins)
     plt.show()
     plt.close()
