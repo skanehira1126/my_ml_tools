@@ -1,4 +1,4 @@
-#XGBoost
+# XGBoost
 ## Docs
 
 * [xgboost](https://xgboost.readthedocs.io/en/latest/index.html)
@@ -19,6 +19,7 @@
 * `min_child_weight` : 葉を分岐するために葉を構成する最小限の2階微分値（≒データ数）
 * `gamma` : 決定木を分岐するために最低限減らさなくてはならない目的変数の値
 * `colsample_bytree` : 決定木ごとに特徴量の列をサンプリングする割合
+* `colsample_bylevel` : 深さごとに特徴量の列をサンプリングする割合
 * `subsample` : 決定木ごとに学習データの行をサンプリングする割合
 * `alpha` : 葉のウェイトに対するL1正則化の係数
 * `lambda` : 葉のウェイトに対するL2正則化の係数
@@ -31,6 +32,7 @@
     * `max_depth` : 深くするとモデルの表現度が上がる
     * `subsample` : ランダム性による過学習の抑制（データ方向）
     * `colsample_bytree` : ランダム性による過学習の抑制（特徴量方向）
+    * `colsample_bylevel` : ランダム性による過学習の抑制（特徴量方向）
     * `min_child_weight` : 分岐のしやすさを調整し、モデルの表現度を抑える
 3. その他のパラメータで微調整
     * `gamma` : 分岐のしやすさを調整し、モデルの表現度を抑える
