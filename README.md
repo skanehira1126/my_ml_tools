@@ -1,7 +1,10 @@
-# my_ml_tools
+# ml_study
 ML用スクリプト
 
 ## Documents
+
+kaggleで勝つデータ分析の技術:https://github.com/ghmagazine/kagglebook
+
 ### 競技コンペ
 **kagle**
 
