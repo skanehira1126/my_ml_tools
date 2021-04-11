@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
-def label_encode(df, columns_list, le_map={}):
+def label_encoder(df, columns_list, le_map={}):
     """
     label encoder
 

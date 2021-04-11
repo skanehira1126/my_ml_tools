@@ -51,8 +51,8 @@ def show_prediction_binary(true, pred):
     plot_data = pd.DataFrame([true, pred], index=["true", "pred"]).T
 
     bins = calc_sturges(plot_data)
-    sns.distplot(plot_data[plot_data.true == 1], label="Pos", bins=bins)
-    sns.distplot(plot_data[plot_data.true == 0], label="Neg", bins=bins)
+    sns.histplot(plot_data[plot_data.true == 1], label="Pos", bins=bins)
+    sns.histplot(plot_data[plot_data.true == 0], label="Neg", bins=bins)
     plt.show()
     plt.close()
 
