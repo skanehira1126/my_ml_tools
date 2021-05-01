@@ -21,7 +21,7 @@ class Util(object):
         """
 
         path.parent.mkdir(exist_ok=True)
-        joblib.dump(value, path, compress=True)
+        joblib.dump(target_object, path, compress=True)
 
     @classmethod
     def load(cls, path:pathlib.Path):

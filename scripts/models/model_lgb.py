@@ -1,4 +1,4 @@
-from pathlib import Path
+import pathlib
 
 import numpy as np
 import pandas as pd
@@ -90,15 +90,14 @@ class ModelLgb(MetaModel):
         return predict_val
     
     def save_model(self):
-        model_path = Path(f"./model/{self.name}.model")
+        model_path = pathlib.Path(f"./model/{self.name}.model")
         #pickleで保存
-        Util.dump(self.model, model_path)
+        Util.dump(self, model_path)
     
-    def load_model(self, path):
-        model_path = Path(f"./model/{self.name}.model")
-        self.model = Util.load(path)
-        
-        self._num_iteration = self.model.best_iteration if self.best_iteration <= 0 else self.current_iteration()
+    @classmethod
+    def load_model(cls, path:pathlib.Path):
+        cls = Util.load(path)
+        return cls
    
     def feature_importance(self, importance_type:str="gain") -> np.ndarray:
         """
