@@ -24,6 +24,11 @@ kaggleで勝つデータ分析の技術:https://github.com/ghmagazine/kagglebook
 * [scipy](https://www.scipy.org/)
 * [scikit-learn](https://scikit-learn.org/stable/)
 
+**ツール系**
+
+* [shap](https://github.com/slundberg/shap)
+* [hyperopt](https://github.com/hyperopt/hyperopt)
+
 **可視化**
 
 * [matplotlib](https://matplotlib.org/)
