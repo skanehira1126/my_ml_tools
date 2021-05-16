@@ -6,8 +6,8 @@ import numpy as np
 import pandas as pd
 import xgboost as xgb
 
-from model import MetaModel
-from utils import Util
+from .model import MetaModel
+from .utils import Util
 
 class ModelXgb(MetaModel):
     
@@ -155,7 +155,7 @@ class ModelXgb(MetaModel):
         cls = Util.load(path)
         return cls
    
-    def feature_importance(self, importance_type:str="gain") -> pd.DataFrame:
+    def feature_importance(self, importance_type:str="total_gain") -> pd.DataFrame:
         """
         モデルのfeature importanceを返却する
 
