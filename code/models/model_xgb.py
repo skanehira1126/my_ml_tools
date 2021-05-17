@@ -35,7 +35,7 @@ class ModelXgb(MetaModel):
         params: dict
             モデルの学習に用いるパラメーター
         """
-        super().__init__(f"lgb-{name}", params)
+        super().__init__(f"xgb-{name}", params)
         
         self.metric_log = {}
         self.model = None

@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 import lightgbm as lgb
 
-from model import MetaModel
-from utils import Util
+from .model import MetaModel
+from .utils import Util
 
 class ModelLgb(MetaModel):
     
